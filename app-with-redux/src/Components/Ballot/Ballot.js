@@ -26,12 +26,14 @@ const Ballot = () => {
 
   return (
     <ErrorBoundary>
-      <div className='ballot'>
-        {categoriesData.map((row) => { return <Category key={row.id} category={row} />})}
-      </div>
-      <div className="clear"></div>
-      <button className="submit-ballot-button" onClick={toggleModelDialog}>SUBMIT BALLOT BUTTON</button>
-      {toggleModal && <ModalDialog toggleModelDialog={toggleModelDialog} />}
+      <>
+        <div className='ballot'>
+          {categoriesData.map((row) => { return <Category key={row.id} category={row} />})}
+        </div>
+        <div className="clear"></div>
+        <button className="submit-ballot-button" onClick={toggleModelDialog}>SUBMIT BALLOT BUTTON</button>
+        {toggleModal && <ModalDialog toggleModelDialog={toggleModelDialog} />}
+      </>
     </ErrorBoundary>
   )
 }

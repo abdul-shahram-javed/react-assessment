@@ -17,7 +17,7 @@ afterEach(() => {
   container = null;
 });
 
-it("renders Category data", async () => {
+it("renders user data", async () => {
   const fakeCategories = {
     items: [
       {
@@ -65,7 +65,7 @@ it("renders Category data", async () => {
     render(<Ballot />, container);
   });
 
-  console.log(container.firstChild.className)
+  console.log(container.container.firstChild.className)
 //   expect(container.querySelector("summary").textContent).toBe(fakeCategories.name);
 //   expect(container.querySelector("strong").textContent).toBe(fakeCategories.age);
 //   expect(container.textContent).toContain(fakeCategories.address);
