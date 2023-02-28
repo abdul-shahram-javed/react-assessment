@@ -15,7 +15,7 @@ function ModalDialog(props) {
         <Modal.Header closeButton onClick={toggleModal}>
           <Modal.Title>Movie Ballot</Modal.Title>
         </Modal.Header>
-        <Modal.Body>SUCCESS</Modal.Body>
+        <Modal.Body>Your Vote is successfully submitted, Thank you!</Modal.Body>
       </Modal>
     </>
   );
