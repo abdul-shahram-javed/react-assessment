@@ -1,21 +1,22 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Button from "./Button";
+import Button from "../Button/Button";
 import PropTypes from "prop-types";
+import styles from './Nominee.module.css'
 
 function NomineeCard({ nomineeData, selectedNomineeIds, categoryId }) {
   const nomineeCardClass =
     selectedNomineeIds.indexOf(nomineeData.id) !== -1
-      ? "selected-nominee-card"
+      ? styles.selectedNomineeCard
       : "";
 
   return (
-    <div className={`nominee-card ${nomineeCardClass}`}>
+    <div className={`${styles.nomineeCard} ${nomineeCardClass}`}>
       {nomineeData.title}
-      <br />
-      <br />
-      PHOTO:
-      {nomineeData.photoUrl}
+
+
+       <img src={nomineeData.photoUrL} alt='Nominee' className={styles.nomineePicture} />
+
       <Button
         key={nomineeData.id}
         nomineeData={nomineeData}
@@ -34,7 +35,7 @@ export default function Nominee(props) {
   const categoryId = categoryData?.id;
 
   return (
-    <div>
+    <div className={styles.nomineeCardContainer}>
       {categoryData?.items?.map((nominee) => (
         <NomineeCard
           key={nominee.id}

@@ -1,0 +1,5 @@
+.categoryHeader {
+  background-color: var(--primary-color);
+  padding: 10px;
+  color: white
+}

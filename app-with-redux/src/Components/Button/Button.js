@@ -1,12 +1,11 @@
 import React from 'react'
 import PropTypes from "prop-types";
 import { useDispatch } from 'react-redux'
-import { saveSelectedNominee, saveSelectedNomineeId } from '../Redux/slice/CategorySlice'
+import { saveSelectedNominee, saveSelectedNomineeId } from '../../Redux/slice/CategorySlice'
+import styles from './Button.module.css'
 
-Button.propTypes = {
-  categoryId: PropTypes.string.isRequired,
-  nomineeData: PropTypes.object.isRequired,
-};
+import { Button as ButtonStrap } from 'react-bootstrap';
+
 
 export default function Button(props) {
 
@@ -20,8 +19,14 @@ export default function Button(props) {
   }
 
   return (
-    <div>
-      <button onClick={handleClick}>Select Me</button>
-    </div>
+    <>
+      <ButtonStrap variant="primary" onClick={handleClick} className={styles.primaryBtn}>Select Me</ButtonStrap>
+    </>
   )
 }
+
+
+Button.propTypes = {
+  categoryId: PropTypes.string.isRequired,
+  nomineeData: PropTypes.object.isRequired,
+};

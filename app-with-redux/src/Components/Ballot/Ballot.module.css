@@ -1,0 +1,9 @@
+.ballot {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.submitBallotBtn {
+  margin: 50px auto;
+  padding: 15px 50px;
+}

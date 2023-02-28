@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import Category from '../Category'
+import Category from '../Category/Category'
 import Api from '../../Api/Api'
 import ErrorBoundary from '../../Error-boundaries/error-boundary';
-import ModalDialog from '../ModalDialog';
+import styles from './Ballot.module.css'
+import ModalDialog from '../ModalDialog/ModalDialog';
+import { Button } from 'react-bootstrap';
+
 
 const Ballot = () => {
 
@@ -27,11 +30,10 @@ const Ballot = () => {
   return (
     <ErrorBoundary>
       <>
-        <div className='ballot'>
+        <div className={styles.ballot}>
           {categoriesData.map((row) => { return <Category key={row.id} category={row} />})}
         </div>
-        <div className="clear"></div>
-        <button className="submit-ballot-button" onClick={toggleModelDialog}>SUBMIT BALLOT BUTTON</button>
+        <Button className={styles.submitBallotBtn} onClick={toggleModelDialog} type='submit'> Submit Ballot</Button>
         {toggleModal && <ModalDialog toggleModelDialog={toggleModelDialog} />}
       </>
     </ErrorBoundary>

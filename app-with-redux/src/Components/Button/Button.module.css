@@ -1,0 +1,7 @@
+.primaryBtn {
+    max-width: 120px;
+    width: fit-content;
+    margin: 3px auto;
+    background-color: var(--primary-color) !important;
+    border: none !important
+}
