@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from "prop-types";
 import { useDispatch } from 'react-redux'
-import { saveSelectedNominee, saveSelectedNomineeId } from '../Redux/CategorySlice'
+import { saveSelectedNominee, saveSelectedNomineeId } from '../Redux/slice/CategorySlice'
 
 Button.propTypes = {
   categoryId: PropTypes.string.isRequired,
@@ -10,11 +10,13 @@ Button.propTypes = {
 
 export default function Button(props) {
 
-  const reduxDispatch = useDispatch()
+  const {categoryId, nomineeData} = props
+
+  const dispatch = useDispatch()
 
   function handleClick() {
-    reduxDispatch(saveSelectedNominee({ type: props.categoryId, nomineeId: props.nomineeData.id }))
-    reduxDispatch(saveSelectedNomineeId({nomineeId: props.nomineeData.id, categoryId: props.categoryId}))
+    dispatch(saveSelectedNominee({ type: categoryId, nomineeId: nomineeData?.id }))
+    dispatch(saveSelectedNomineeId({nomineeId: nomineeData?.id, categoryId: categoryId}))
   }
 
   return (
